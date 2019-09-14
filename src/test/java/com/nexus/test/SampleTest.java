@@ -1,10 +1,13 @@
 package com.nexus.test;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.BlockJUnit4ClassRunner;
 
 import junit.framework.Assert;
 
-public class Sample {
+@RunWith(BlockJUnit4ClassRunner.class)
+public class SampleTest {
 	
 	@Test
 	public void m1(){
