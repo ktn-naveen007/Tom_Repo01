@@ -10,17 +10,18 @@ mvn compile
 '''
 }
 stage('unittest'){
-    steps{
+    
 sh '''
 mvn test
 '''
-    }
-    post{
+    
+    
+}
+post{
         always{
              junit testResults:"target/surefire-reports/*.xml"
         }
     }
-}
 stage('build'){
 sh '''
 mvn package -DskipTests
