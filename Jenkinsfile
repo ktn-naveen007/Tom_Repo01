@@ -23,13 +23,14 @@ sh '''
 mvn test
 '''
 }  
-}  
+  
 
 post{
         always{
              junit testResults:"target/surefire-reports/*.xml"
         }
     }
+}
 stage('build'){
     steps{
 sh '''
