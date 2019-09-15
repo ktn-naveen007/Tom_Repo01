@@ -16,15 +16,15 @@ mvn compile
 }
 }
 
-steps{
+
 stage('unittest'){
-    
+  steps{  
 sh '''
 mvn test
 '''
 }  
-    
-}
+}  
+
 post{
         always{
              junit testResults:"target/surefire-reports/*.xml"
@@ -37,15 +37,15 @@ mvn package -DskipTests
 '''
 }
 }
-steps{
-stage('archive'){
 
+stage('archive'){
+steps{
 archiveArtifacts artifacts: '**/*.war'
 }
 }
-steps{
-stage('Deploy'){
 
+stage('Deploy'){
+steps{
 sh '''
 
     docker build -t app/tomcat .
